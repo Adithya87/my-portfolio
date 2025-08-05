@@ -12,7 +12,7 @@ Follow these steps to deploy your portfolio to Render:
    git add .
    git commit -m "Initial portfolio commit"
    git branch -M main
-   git remote add origin https://github.com/Adithya87/your-portfolio-repo.git
+   git remote add origin https://github.com/Adithya87/my-portfolio.git
    git push -u origin main
    ```
 
@@ -38,6 +38,7 @@ Follow these steps to deploy your portfolio to Render:
 ### Step 3: Environment Variables (Optional)
 
 If you need any environment variables, add them in the Render dashboard:
+
 - Go to your service dashboard
 - Click "Environment"
 - Add any required variables
@@ -73,6 +74,7 @@ npm start
 ## 🌐 After Deployment
 
 Your portfolio will be available at:
+
 - **Render URL**: `https://your-service-name.onrender.com`
 - **Custom Domain** (if configured): `https://yourdomain.com`
 
@@ -89,20 +91,24 @@ Your portfolio will be available at:
 ## 🛠️ Troubleshooting
 
 **Build Failed?**
+
 - Check that all files are committed to GitHub
 - Ensure Node.js version compatibility (using 18+)
 
 **Site Not Loading?**
+
 - Check the Render logs in the dashboard
 - Verify the start command is `npm start`
 
 **Assets Not Loading?**
+
 - Ensure the assets folder is included in your GitHub repo
 - Check file paths are correct in your HTML
 
 ## 🎉 Next Steps
 
 After deployment:
+
 1. Test all functionality (contact form, project modals, etc.)
 2. Update your resume/profiles with the new URL
 3. Share your professional portfolio with the world!
