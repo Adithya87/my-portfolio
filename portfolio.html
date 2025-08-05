@@ -61,8 +61,6 @@
       }
     </script>
     <style>
-        /* Any critical styles can be kept here if needed */
-
         :root {
             --primary: #2563eb;
             --primary-dark: #1e40af;
@@ -3027,8 +3025,6 @@
                 box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
             }
             
-            /* Project category styles removed */
-            
             /* Responsive project grid with fixed heights */
             .projects-grid {
                 display: grid;
@@ -3298,8 +3294,6 @@
             .project-link:hover .link-icon {
                 transform: translateX(3px);
             }
-            
-            /* GitHub button styles removed */
             
             .form-checkbox {
                 display: flex;
@@ -3615,11 +3609,10 @@
         function addPlaceholderImages() {
             const projectImages = document.querySelectorAll('.project-image');
             projectImages.forEach(imageContainer => {
-                // Category labels removed
                 const card = imageContainer.closest('.project-card');
                 const contentDiv = card.querySelector('.project-content');
                 
-                // Add GitHub link if missing
+                // Ensure project links exist
                 const projectLinks = card.querySelector('.project-content');
                 const existingLinks = projectLinks.querySelector('.project-links');
                 if (!existingLinks) {
@@ -3631,18 +3624,11 @@
                         // Convert existing link to new format if needed
                         if (!liveLink.querySelector('.link-text')) {
                             const linkText = liveLink.textContent;
-                            const linkHref = liveLink.getAttribute('href');
                             liveLink.innerHTML = `<span class="link-text">${linkText}</span><span class="link-icon">↗</span>`;
                             linksContainer.appendChild(liveLink);
                         } else {
                             linksContainer.appendChild(liveLink.cloneNode(true));
                         }
-                    }
-                    
-                    // GitHub link generation removed
-                    
-                    // Replace old link or append new container
-                    if (liveLink) {
                         liveLink.parentNode.replaceChild(linksContainer, liveLink);
                     } else {
                         projectLinks.appendChild(linksContainer);
@@ -3746,7 +3732,7 @@
                     return { success: true, method: 'Formspree' };
                 }
             } catch (error) {
-                console.log('Formspree failed, trying backup method...');
+                // Fallback to next method
             }
 
             // Backup method: EmailJS
@@ -3772,11 +3758,9 @@
                 if (emailJSResponse.ok) {
                     return { success: true, method: 'EmailJS' };
                 }
-            } catch (error) {
-                console.log('EmailJS also failed');
-            }
-
-            // Final fallback: Netlify Forms (if hosted on Netlify)
+                } catch (error) {
+                    // EmailJS fallback failed
+                }            // Final fallback: Netlify Forms (if hosted on Netlify)
             try {
                 const netlifyResponse = await fetch('/', {
                     method: 'POST',
@@ -3787,11 +3771,9 @@
                 if (netlifyResponse.ok) {
                     return { success: true, method: 'Netlify' };
                 }
-            } catch (error) {
-                console.log('Netlify forms also failed');
-            }
-
-            return { success: false };
+                } catch (error) {
+                    // Netlify forms fallback failed
+                }            return { success: false };
         }
 
         contactForm.addEventListener('submit', async (e) => {
@@ -3988,7 +3970,7 @@ Full-Stack Web Development, Machine Learning, Artificial Intelligence, Cloud Com
             window.URL.revokeObjectURL(url);
             
             // Show confirmation
-            alert('Resume downloaded! (This is a demo - in a real portfolio, this would be a PDF file)');
+            alert('Resume downloaded successfully!');
         }
 
         // Add some interactive hover effects
