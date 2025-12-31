@@ -469,18 +469,6 @@ function initProjectModals() {
     // Project details data
     const projectDetails = {
         project1: {
-            title: "MERN Stack Todo Application with Real-time Notifications",
-            description: "A full-stack task management system using MERN stack (React.js, Node.js, Express.js, MongoDB) with secure user authentication, CRUD operations, and automated task scheduling functionality.",
-            features: [
-                "Implemented real-time browser notifications with Web Notifications API for automatic task reminders based on scheduled date/time",
-                "Built RESTful API with Express.js backend featuring MongoDB integration, Mongoose ODM, secure user registration/login",
-                "Persistent task storage with React Router navigation",
-                "Responsive web application with Bootstrap styling and Axios HTTP client integration"
-            ],
-            technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Web Notifications API", "React Router", "Bootstrap", "Axios"],
-            liveLink: "https://mern-todo-frontend-kvcx.onrender.com"
-        },
-        project2: {
             title: "AI Prompt Library Web App",
             description: "A full-stack AI Prompt Library web application enabling users to upload, view, and manage AI-generated prompts with associated images.",
             features: [
@@ -492,19 +480,7 @@ function initProjectModals() {
             technologies: ["Next.js", "TypeScript", "MongoDB", "Cloudinary", "Tailwind CSS", "Render"],
             liveLink: "https://promptopia-92a8.onrender.com"
         },
-        project3: {
-            title: "Forest Fire Detection & Risk Assessment Web Application",
-            description: "An ML-powered forest fire prediction system using Python (scikit-learn, XGBoost, Flask) with comparative analysis of 5 algorithms on 518-record UCI dataset.",
-            features: [
-                "Achieved optimal performance through automated R² score optimization",
-                "Developed full-stack web application with real-time environmental risk assessment analyzing temperature, humidity, wind, and rainfall data",
-                "Built comprehensive platform featuring 9 interactive pages with Leaflet.js mapping, community alert system, Chart.js analytics dashboard",
-                "Implemented persistent model storage with joblib, responsive web interface, and automated prediction pipeline"
-            ],
-            technologies: ["Python", "scikit-learn", "XGBoost", "Flask", "Leaflet.js", "Chart.js", "joblib"],
-            githubLink: "https://github.com/Adithya87/forest-fire-detection"
-        },
-        project4: {
+        project2: {
             title: "Leaf Disease Detection using Deep Learning",
             description: "A CNN-based classification system using TensorFlow/Keras achieving 88-96% accuracy across 33 plant disease categories.",
             features: [
@@ -516,7 +492,7 @@ function initProjectModals() {
             technologies: ["Python", "TensorFlow", "Keras", "VGG16", "Transfer Learning", "Computer Vision", "NumPy", "Matplotlib"],
             githubLink: "https://github.com/Adithya87/leaf_disease_detection"
         },
-        project5: {
+        project3: {
             title: "Habitat Sustainability Analysis: Climate-Driven Species Vulnerability Assessment",
             description: "A multi-factor vulnerability assessment framework analyzing 10 endangered species using Python data science stack with 84 WorldClim climate datasets and 1.46GB GBIF occurrence data.",
             features: [
@@ -527,6 +503,43 @@ function initProjectModals() {
             ],
             technologies: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Rasterio", "GeoPandas", "Statistical Modeling", "Geospatial Analysis", "Jupyter Notebook"],
             githubLink: "https://github.com/Adithya87/habitat-sustainability-analysis"
+        },
+        project4: {
+            title: "Forest Fire Detection & Risk Assessment Web Application",
+            description: "An ML-powered forest fire prediction system using Python (scikit-learn, XGBoost, Flask) with comparative analysis of 5 algorithms on 518-record UCI dataset.",
+            features: [
+                "Achieved optimal performance through automated R² score optimization",
+                "Developed full-stack web application with real-time environmental risk assessment analyzing temperature, humidity, wind, and rainfall data",
+                "Built comprehensive platform featuring 9 interactive pages with Leaflet.js mapping, community alert system, Chart.js analytics dashboard",
+                "Implemented persistent model storage with joblib, responsive web interface, and automated prediction pipeline"
+            ],
+            technologies: ["Python", "scikit-learn", "XGBoost", "Flask", "Leaflet.js", "Chart.js", "joblib"],
+            githubLink: "https://github.com/Adithya87/forest-fire-detection"
+        },
+        project5: {
+            title: "MERN Stack Todo Application with Real-time Notifications",
+            description: "A full-stack task management system using MERN stack (React.js, Node.js, Express.js, MongoDB) with secure user authentication, CRUD operations, and automated task scheduling functionality.",
+            features: [
+                "Implemented real-time browser notifications with Web Notifications API for automatic task reminders based on scheduled date/time",
+                "Built RESTful API with Express.js backend featuring MongoDB integration, Mongoose ODM, secure user registration/login",
+                "Persistent task storage with React Router navigation",
+                "Responsive web application with Bootstrap styling and Axios HTTP client integration"
+            ],
+            technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Web Notifications API", "React Router", "Bootstrap", "Axios"],
+            liveLink: "https://mern-todo-frontend-kvcx.onrender.com"
+        },
+        project6: {
+            title: "Secure API Automation Microservice",
+            description: "A Spring Boot microservice for automated webhook generation and SQL problem solving with JWT authentication and reactive programming.",
+            features: [
+                "Built secure RESTful microservice using Spring Boot 3.1.5 with JWT authentication for webhook generation and SQL problem solving",
+                "Implemented reactive programming with WebClient for efficient API communication and data processing",
+                "Developed automated webhook generation service with configurable endpoints and secure token-based authentication",
+                "Created SQL solver component that determines and solves problems based on registration numbers with comprehensive error handling",
+                "Integrated Docker containerization for seamless deployment and scalability"
+            ],
+            technologies: ["Java", "Spring Boot", "Spring Security", "JWT", "WebClient", "REST API", "Docker", "Maven"],
+            githubLink: "https://github.com/Adithya87/Secure-API-Automation-Microservice-"
         }
     };
 
