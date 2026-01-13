@@ -12,12 +12,12 @@ app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 // Route for the main portfolio page
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'portfolio.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Catch-all route to serve portfolio.html for any other routes
+// Catch-all route to serve index.html for any other routes
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'portfolio.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Start the server
