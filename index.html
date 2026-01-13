@@ -3573,13 +3573,15 @@
         
         // Navigation functionality
         const navLinks = document.querySelectorAll('.nav-link');
-        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileMenuElement = document.querySelector('.mobile-menu');
         const navLinksContainer = document.querySelector('.nav-links');
 
-        // Mobile menu toggle
-        mobileMenu.addEventListener('click', () => {
-            navLinksContainer.classList.toggle('active');
-        });
+        // Mobile menu toggle (guarded) — prevent errors if selectors don't exist
+        if (mobileMenuElement && navLinksContainer) {
+            mobileMenuElement.addEventListener('click', () => {
+                navLinksContainer.classList.toggle('active');
+            });
+        }
 
         // Smooth scrolling and active link highlighting
         function updateActiveLink() {
