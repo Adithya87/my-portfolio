@@ -2489,7 +2489,7 @@
                     <h3>Bachelor of Technology in Computer Science and Engineering</h3>
                     <p class="timeline-date">Expected 2026</p>
                     <p class="timeline-place">VIT AP University, Amaravathi</p>
-                    <p class="timeline-description">CGPA: 8.70</p>
+                    <p class="timeline-description">CGPA: 8.67</p>
                     <p class="timeline-courses">Relevant Coursework: Data Structures & Algorithms, Operating Systems, Object-Oriented Programming, Database Management Systems, Software Engineering, Machine Learning, Web Development, Cloud Computing</p>
                 </div>
             </div>
@@ -4171,30 +4171,51 @@ Full-Stack Web Development, Machine Learning, Artificial Intelligence, Cloud Com
                 document.body.style.opacity = '1';
             }, 100);
             
-            // Enhanced Mobile Navigation
+            // Enhanced Mobile Navigation — fixed to target the actual elements in the markup
             const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const navLinks = document.querySelector('.nav-links');
-            
-            if (mobileMenuButton && navLinks) {
-                mobileMenuButton.addEventListener('click', () => {
-                    navLinks.classList.toggle('active');
+            const mobileMenuContainer = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const closeIcon = document.getElementById('close-icon');
+
+            if (mobileMenuButton && mobileMenuContainer) {
+                mobileMenuButton.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    // Toggle visibility (Tailwind 'hidden' class used in markup)
+                    mobileMenuContainer.classList.toggle('hidden');
+
+                    // Toggle icons
+                    if (menuIcon && closeIcon) {
+                        menuIcon.classList.toggle('hidden');
+                        closeIcon.classList.toggle('hidden');
+                    }
+
                     mobileMenuButton.setAttribute('aria-expanded', 
-                        navLinks.classList.contains('active') ? 'true' : 'false'
+                        mobileMenuContainer.classList.contains('hidden') ? 'false' : 'true'
                     );
                 });
-                
-                // Close mobile menu when clicking on a link
-                navLinks.querySelectorAll('a').forEach(link => {
+
+                // Close mobile menu when clicking on any mobile link
+                mobileMenuContainer.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', () => {
-                        navLinks.classList.remove('active');
+                        mobileMenuContainer.classList.add('hidden');
+                        if (menuIcon && closeIcon) {
+                            menuIcon.classList.remove('hidden');
+                            closeIcon.classList.add('hidden');
+                        }
                         mobileMenuButton.setAttribute('aria-expanded', 'false');
                     });
                 });
-                
-                // Close mobile menu when clicking outside
-                document.addEventListener('click', (e) => {
-                    if (!mobileMenuButton.contains(e.target) && !navLinks.contains(e.target)) {
-                        navLinks.classList.remove('active');
+
+                // Close mobile menu when clicking outside the menu
+                document.addEventListener('click', (ev) => {
+                    if (!mobileMenuContainer.classList.contains('hidden') &&
+                        !mobileMenuContainer.contains(ev.target) &&
+                        !mobileMenuButton.contains(ev.target)) {
+                        mobileMenuContainer.classList.add('hidden');
+                        if (menuIcon && closeIcon) {
+                            menuIcon.classList.remove('hidden');
+                            closeIcon.classList.add('hidden');
+                        }
                         mobileMenuButton.setAttribute('aria-expanded', 'false');
                     }
                 });
