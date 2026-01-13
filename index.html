@@ -2188,7 +2188,16 @@
             100% { background-position: -200% 0; }
         }
     </style>
-</head>
+
+    <!-- Ensure mobile menu button and menu are clickable/visible on mobile -->
+    <style>
+        #mobile-menu-button { z-index: 9999; position: relative; pointer-events: auto; }
+        #mobile-menu { z-index: 9998; pointer-events: auto; }
+        /* If Tailwind isn't applied yet, ensure hidden/menu show behavior */
+        #mobile-menu.hidden { display: none !important; }
+        #mobile-menu:not(.hidden) { display: block !important; }
+    </style>
+    </head>
 <body>
     <!-- Navigation -->
     <nav id="navbar" class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-lg shadow-md transition-all duration-300">
